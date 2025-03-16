@@ -30,13 +30,14 @@ export default async function MealDetailsPage({ params }) {
   return (
     <>
       <header className={classes.header}>
-        {/* <div className={classes.image}>
+        <div className={classes.image}>
           <Image
-            src={`https://maxschwarzmueller-nextjs-demo-users-image.s3.amazonaws.com/${meal.image}`}
+            // src={`https://maxschwarzmueller-nextjs-demo-users-image.s3.amazonaws.com/${meal.image}`}
+            src={`/images/${meal.image}`}
             alt={meal.title}
             fill
           />
-        </div> */}
+        </div>
         <div className={classes.headerText}>
           <h1>{meal.title}</h1>
           <p className={classes.creator}>
