@@ -5,8 +5,8 @@ import { getMeal } from '@/lib/meals';
 import classes from './page.module.css';
 
 export async function generateMetadata({ params }) {
-  const meal = getMeal(params.mealSlug);
-  console.log('meal', meal, params);
+  const { mealSlug } = await params;
+  const meal = getMeal(mealSlug);
   if (!meal) {
     notFound();
   }
@@ -17,9 +17,10 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function MealDetailsPage({ params }) {
-  const meal = getMeal(params.mealSlug);
-
+export default async function MealDetailsPage({ params }) {
+  const { mealSlug } = await params;
+  const meal = getMeal(mealSlug); // better-sqlite3 是同步的，不用加 await
+  console.log('meal', meal);
   if (!meal) {
     notFound();
   }
@@ -29,13 +30,13 @@ export default function MealDetailsPage({ params }) {
   return (
     <>
       <header className={classes.header}>
-        <div className={classes.image}>
+        {/* <div className={classes.image}>
           <Image
             src={`https://maxschwarzmueller-nextjs-demo-users-image.s3.amazonaws.com/${meal.image}`}
             alt={meal.title}
             fill
           />
-        </div>
+        </div> */}
         <div className={classes.headerText}>
           <h1>{meal.title}</h1>
           <p className={classes.creator}>
