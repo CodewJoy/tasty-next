@@ -3,14 +3,13 @@ import Image from 'next/image';
 import classes from './meal-item.module.css';
 
 export default function MealItem({ title, slug, image, summary, creator }) {
-  console.log('image', image);  
+  // console.log('image', image);  
   return (
     <article className={classes.meal}>
       <header>
         <div className={classes.image}>
           <Image
-            // src={`https://maxschwarzmueller-nextjs-demo-users-image.s3.amazonaws.com/${image}`}
-            src={`/images/${image}`}
+            src={`${image}`}
             alt={title}
             fill
           />

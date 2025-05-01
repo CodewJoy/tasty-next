@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
 export default async function MealDetailsPage({ params }) {
   const { mealSlug } = await params;
   const meal = getMeal(mealSlug); // better-sqlite3 是同步的，不用加 await
-  console.log('meal', meal);
+  // console.log('meal', meal);
   if (!meal) {
     notFound();
   }
@@ -32,8 +32,7 @@ export default async function MealDetailsPage({ params }) {
       <header className={classes.header}>
         <div className={classes.image}>
           <Image
-            // src={`https://maxschwarzmueller-nextjs-demo-users-image.s3.amazonaws.com/${meal.image}`}
-            src={`/images/${meal.image}`}
+            src={`${meal.image}`}
             alt={meal.title}
             fill
           />

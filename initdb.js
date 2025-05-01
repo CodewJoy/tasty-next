@@ -170,6 +170,7 @@ const dummyMeals = [
     creator_email: 'sophiagreen@example.com',
   },
 ];
+// db.prepare('DELETE FROM meals').run();
 
 db.prepare(`
    CREATE TABLE IF NOT EXISTS meals (
@@ -184,23 +185,23 @@ db.prepare(`
     )
 `).run();
 
-async function initData() {
-  const stmt = db.prepare(`
-      INSERT INTO meals VALUES (
-         null,
-         @slug,
-         @title,
-         @image,
-         @summary,
-         @instructions,
-         @creator,
-         @creator_email
-      )
-   `);
+// async function initData() {
+//   const stmt = db.prepare(`
+//       INSERT INTO meals VALUES (
+//          null,
+//          @slug,
+//          @title,
+//          @image,
+//          @summary,
+//          @instructions,
+//          @creator,
+//          @creator_email
+//       )
+//    `);
 
-  for (const meal of dummyMeals) {
-    stmt.run(meal);
-  }
-}
+//   for (const meal of dummyMeals) {
+//     stmt.run(meal);
+//   }
+// }
 
-initData();
+// initData();
