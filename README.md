@@ -1,22 +1,43 @@
-🍽️ Tasty-Next: Recipe Management with Next.js
-Tasty-Next is a full-stack application built with Next.js, designed to manage and display recipes. It utilizes a lightweight SQLite database and integrates with Cloudinary for image hosting.
+# Tasty-Next: Full-Stack Recipe Management App with Next.js
 
-🧰 Technologies Used:
-Next.js: Framework for building the application.
+**Tasty-Next** is a full-stack web application built with **Next.js 14 App Router**, designed to manage and share recipes. It integrates a local SQLite database and Cloudinary for image storage, and emphasizes modern full-stack practices with performance, SEO, and security in mind.
 
-SQLite (via better-sqlite3): Lightweight database for data storage.
+---
 
-Cloudinary: Cloud service for image hosting.
+## Tech Stack
 
-Slugify: Library to generate SEO-friendly URLs.
+- **Next.js 14 (App Router)** – Full-stack framework with server components, dynamic routing, and metadata support.
+- **React & `useActionState`** – For managing client-side form state and submissions.
+- **better-sqlite3** – Lightweight and performant SQLite wrapper for data storage.
+- **Cloudinary** – For secure image uploads and hosting.
+- **XSS** – To sanitize user inputs and prevent cross-site scripting.
+- **Slugify** – For generating SEO-friendly URLs.
 
-XSS: Library to sanitize user inputs and prevent cross-site scripting attacks.
+---
 
-🔧 Key Features:
-Recipe CRUD Operations: Create, read, update, and delete recipes.
+## Key Features
 
-Image Upload: Upload and store recipe images securely.
+- **Recipe CRUD operations** (create, read, update, delete)
+- 📷 **Image upload** via Cloudinary with client-side `FormData`
+- **XSS protection** via input sanitization
+- **SEO optimization** with clean slugs and dynamic metadata
+- **Server Actions & Revalidation** using:
+  - `useActionState`
+  - `revalidatePath()`
+  - `redirect()`
+- **Dynamic Routing** using `[mealSlug]` for individual recipe pages
+- **404 handling** with `notFound()` for missing slugs
 
-SEO Optimization: Generate clean URLs using slugs.
+---
 
-Security: Sanitize user inputs to protect against XSS attacks.
+## Notable Next.js Techniques Used
+
+- Server and Client Components separation
+- `generateMetadata()` for dynamic SEO meta tags
+- Server Actions for form handling (no REST API needed)
+- File-based routing and layout structure
+- SQLite access within Server Components
+
+---
+
+> This project demonstrates practical usage of Next.js 14 full-stack capabilities with a focus on simplicity, performance, and real-world features like image uploading and user-generated content.
