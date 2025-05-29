@@ -18,7 +18,7 @@
 ## Key Features
 
 - **Recipe CRUD operations** (create, read, update, delete)
-- 📷 **Image upload** via Cloudinary with client-side `FormData`
+- **Image upload** via Cloudinary with client-side `FormData`
 - **XSS protection** via input sanitization
 - **SEO optimization** with clean slugs and dynamic metadata
 - **Server Actions & Revalidation** using:
